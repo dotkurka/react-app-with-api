@@ -1,10 +1,17 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import postSlice from "./postSlice";
+import userSlice from "./userSlice";
+import createSagaMiddleware from "redux-saga";
+import watchUsers from "../sagas";
+
+const saga = createSagaMiddleware();
 
 const rootReducers = combineReducers({
-    postTable: postSlice,
+    users: userSlice,
 });
 
 export const store = configureStore({
     reducer: rootReducers,
+    middleware: [saga],
 });
+
+saga.run(watchUsers);

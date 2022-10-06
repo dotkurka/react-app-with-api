@@ -2,9 +2,8 @@ import { call, put, takeEvery } from "redux-saga/effects";
 import { addUser } from "../store/userSlice";
 
 function* workUsers() {
-    const user = yield call(() => fetch("http://echo.jsontest.com/key/value/one/two"));
-    const formattedUser = yield user.json();
-    yield put(addUser(formattedUser));
+    const user = yield call(() => fetch("http://localhost:3000/users/"));
+    yield put(addUser(user));
 }
 
 function* watchUsers() {

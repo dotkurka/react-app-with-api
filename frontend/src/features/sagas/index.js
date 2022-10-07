@@ -1,13 +1,16 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { takeEvery, call, put } from "redux-saga/effects";
 import { addUser } from "../store/userSlice";
+import fetchUset from "../../api";
 
 function* workUsers() {
-    const user = yield call(() => fetch("http://localhost:3000/users/"));
-    yield put(addUser(user));
+    const data = yield call(() => fetchUset());
+    yield put(addUser(data));
 }
 
 function* watchUsers() {
     yield takeEvery("users/addUser", workUsers);
 }
 
-export default watchUsers;
+export default function* rootSaga() {
+    yield watchUsers();
+}

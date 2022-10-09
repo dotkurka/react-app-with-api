@@ -6,6 +6,7 @@ const userSlice = createSlice({
         users: [],
     },
     reducers: {
+        fetchUser() {},
         addUser(state, action) {
             state.users.push(action.payload);
         },
@@ -15,6 +16,6 @@ const userSlice = createSlice({
     },
 });
 
-export const { addUser, removeUser } = userSlice.actions;
+export const { addUser, removeUser, fetchUser } = userSlice.actions;
 
 export default userSlice.reducer;

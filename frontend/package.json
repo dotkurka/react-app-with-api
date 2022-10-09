@@ -8,17 +8,19 @@
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
         "formik": "^2.2.9",
+        "node-sass": "^7.0.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-redux": "^8.0.2",
         "react-scripts": "5.0.1",
         "redux": "^4.2.0",
         "redux-saga": "^1.2.1",
+        "sass": "^1.55.0",
         "web-vitals": "^2.1.4",
         "yup": "^0.32.11"
     },
     "scripts": {
-        "start": "PORT=3006 react-scripts start",
+        "start": "PORT=3003 react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"

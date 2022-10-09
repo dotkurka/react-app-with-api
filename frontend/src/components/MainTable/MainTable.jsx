@@ -1,18 +1,16 @@
 import React from "react";
-//import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-//import PostTable from "../PostTable/PostTable";
-import { addUser } from "../../features/store/userSlice";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import PostTable from "../PostTable/PostTable";
+import { fetchUser } from "../../features/store/userSlice";
 
 const MainTable = () => {
     const posts = useSelector((state) => state.users.users);
     const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     dispatch(addUser());
-    // }, [dispatch]);
-
-    console.log(posts);
+    useEffect(() => {
+        dispatch(fetchUser());
+    }, [dispatch]);
 
     return (
         <div>
@@ -26,13 +24,13 @@ const MainTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {posts.map((post) => (
+                    {posts.map((post) => (
                         <PostTable key={post.id} post={post} />
-                    ))} */}
+                    ))}
                 </tbody>
                 <tfoot></tfoot>
             </table>
-            <button onClick={() => dispatch(addUser())}>click</button>
+            <button>click</button>
         </div>
     );
 };

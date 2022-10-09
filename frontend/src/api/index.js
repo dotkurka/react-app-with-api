@@ -1,6 +1,6 @@
-const fetchUset = async () => {
-    const request = await fetch("https://reqres.in/api/users?page=2");
+const requesUser = async () => {
+    const request = await fetch("http://localhost:3000/users/");
     return request.json();
 };
 
-export default fetchUset;
+export default requesUser;

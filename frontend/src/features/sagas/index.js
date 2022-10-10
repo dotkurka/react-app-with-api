@@ -3,9 +3,10 @@ import { addUser } from "../store/userSlice";
 import requesUser from "../../api";
 
 function* workUsers() {
-    const data = yield call(() => requesUser());
+    const users = yield call(() => requesUser());
+    console.log(users);
 
-    yield put(addUser(data));
+    yield put(addUser(users));
 }
 
 function* watchUsers() {

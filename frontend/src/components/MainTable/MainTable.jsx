@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PostTable from "../PostTable/PostTable";
 import { fetchUser } from "../../features/store/userSlice";
+import AddUserForm from "../AddUserForm/AddUserForm";
 
 const MainTable = () => {
     const posts = useSelector((state) => state.users.users);
@@ -30,7 +31,7 @@ const MainTable = () => {
                 </tbody>
                 <tfoot></tfoot>
             </table>
-            <button>click</button>
+            <AddUserForm />
         </div>
     );
 };

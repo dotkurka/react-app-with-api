@@ -8,7 +8,7 @@ const userSlice = createSlice({
     reducers: {
         fetchUser() {},
         addUser(state, action) {
-            state.users.push(action.payload);
+            state.users = action.payload;
         },
         removeUser(state, action) {
             state.users.filter((post) => post.id !== action.payload);

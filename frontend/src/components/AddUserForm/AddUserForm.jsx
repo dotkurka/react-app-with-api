@@ -11,14 +11,16 @@ const initialValues = {
 
 const addNewUser = (values) => {
     try {
-        const resp = axios.post("http://localhost:3000/users/", {
-            id: Date.now(),
-            name: values.name,
-            email: values.email,
-            age: values.age,
-        });
-
-        console.log(resp.data);
+        axios
+            .post("http://localhost:3000/users/", {
+                id: Date.now(),
+                name: values.name,
+                email: values.email,
+                age: values.age,
+            })
+            .then((post) => {
+                console.log(post.data);
+            });
     } catch (error) {
         console.log(error.respons);
     }
@@ -27,16 +29,7 @@ const addNewUser = (values) => {
 const AddUserForm = () => {
     return (
         <Formik initialValues={initialValues} onSubmit={addNewUser} validationSchema={validationSchema}>
-            {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isSubmitting,
-                /* and other goodies */
-            }) => (
+            {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
                 <Form onSubmit={handleSubmit}>
                     <Field
                         type="name"
@@ -62,9 +55,7 @@ const AddUserForm = () => {
                         value={values.age}
                     />
                     {errors.age && touched.age && errors.age}
-                    <button type="submit" disabled={isSubmitting}>
-                        Submit
-                    </button>
+                    <button type="submit">Submit</button>
                 </Form>
             )}
         </Formik>

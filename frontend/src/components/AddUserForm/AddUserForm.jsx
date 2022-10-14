@@ -1,7 +1,8 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import { validationSchema } from "./validationSchema";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { postUser } from "../../features/store/userSlice";
 
 const initialValues = {
     name: "",
@@ -9,24 +10,13 @@ const initialValues = {
     age: "",
 };
 
-const addNewUser = (values) => {
-    try {
-        axios
-            .post("http://localhost:3000/users/", {
-                id: Date.now(),
-                name: values.name,
-                email: values.email,
-                age: values.age,
-            })
-            .then((post) => {
-                console.log(post.data);
-            });
-    } catch (error) {
-        console.log(error.respons);
-    }
-};
-
 const AddUserForm = () => {
+    const dispatch = useDispatch();
+
+    const addNewUser = (values) => {
+        dispatch(postUser(values));
+    };
+
     return (
         <Formik initialValues={initialValues} onSubmit={addNewUser} validationSchema={validationSchema}>
             {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (

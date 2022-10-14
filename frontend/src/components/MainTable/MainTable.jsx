@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PostTable from "../PostTable/PostTable";
-import { fetchUser } from "../../features/store/userSlice";
+import { getUser } from "../../features/store/userSlice";
 import AddUserForm from "../AddUserForm/AddUserForm";
 
 const MainTable = () => {
@@ -10,7 +10,7 @@ const MainTable = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchUser());
+        dispatch(getUser());
     }, [dispatch]);
 
     return (

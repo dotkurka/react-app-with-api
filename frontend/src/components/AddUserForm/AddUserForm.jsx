@@ -1,8 +1,9 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form } from "formik";
 import { validationSchema } from "./validationSchema";
 import { useDispatch } from "react-redux";
 import { postUser } from "../../features/store/userSlice";
+import { Button, TextField } from "@mui/material/";
 
 const initialValues = {
     name: "",
@@ -21,31 +22,48 @@ const AddUserForm = () => {
         <Formik initialValues={initialValues} onSubmit={addNewUser} validationSchema={validationSchema}>
             {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
                 <Form onSubmit={handleSubmit}>
-                    <Field
+                    <TextField
+                        size="small"
+                        id="outlined-basic"
+                        label="Outlined"
+                        variant="outlined"
                         type="name"
                         name="name"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.name}
+                        helperText={errors.name && touched.name && errors.name}
                     />
-                    {errors.name && touched.name && errors.name}
-                    <Field
+
+                    <TextField
+                        size="small"
+                        id="outlined-basic"
+                        label="Outlined"
+                        variant="outlined"
                         type="email"
                         name="email"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.email}
+                        helperText={errors.email && touched.email && errors.email}
                     />
-                    {errors.email && touched.email && errors.email}
-                    <Field
+
+                    <TextField
+                        size="small"
+                        id="outlined-basic"
+                        label="Outlined"
+                        variant="outlined"
                         type="number"
                         name="age"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.age}
+                        helperText={errors.age && touched.age && errors.age}
                     />
-                    {errors.age && touched.age && errors.age}
-                    <button type="submit">Submit</button>
+
+                    <Button variant="contained" type="submit">
+                        Submit
+                    </Button>
                 </Form>
             )}
         </Formik>

@@ -5,10 +5,10 @@ import TableCell from "@mui/material/TableCell";
 const PostTable = ({ post, number }) => {
     return (
         <TableRow>
-            <TableCell>{number}</TableCell>
-            <TableCell>{post.name}</TableCell>
-            <TableCell>{post.email}</TableCell>
-            <TableCell>{post.age}</TableCell>
+            <TableCell align="right">{number}</TableCell>
+            <TableCell align="right">{post.name}</TableCell>
+            <TableCell align="right">{post.email}</TableCell>
+            <TableCell align="right">{post.age}</TableCell>
         </TableRow>
     );
 };

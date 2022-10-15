@@ -15,8 +15,8 @@ const TableList = ({ posts }) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {posts.map((post) => (
-                        <PostTable key={post.id} post={post} />
+                    {posts.map((post, index) => (
+                        <PostTable key={post.id} number={index + 1} post={post} />
                     ))}
                 </TableBody>
                 <tfoot></tfoot>

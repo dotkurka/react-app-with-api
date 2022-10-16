@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../../features/store/userSlice";
 import AddUserForm from "../AddUserForm/AddUserForm";
 import TableList from "../TableList/TableList";
+import "./MainTable.scss";
 
 const MainTable = () => {
     const posts = useSelector((state) => state.users.users);
@@ -14,7 +15,7 @@ const MainTable = () => {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className="main-table">
             <TableList posts={posts} />
             <AddUserForm />
         </div>

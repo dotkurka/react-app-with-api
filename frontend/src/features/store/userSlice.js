@@ -6,16 +6,14 @@ const userSlice = createSlice({
         users: [],
     },
     reducers: {
-        fetchUser() {},
+        getUser() {},
+        postUser() {},
         addUser(state, action) {
             state.users = action.payload;
-        },
-        removeUser(state, action) {
-            state.users.filter((post) => post.id !== action.payload);
         },
     },
 });
 
-export const { addUser, removeUser, fetchUser } = userSlice.actions;
+export const { addUser, postUser, getUser } = userSlice.actions;
 
 export default userSlice.reducer;

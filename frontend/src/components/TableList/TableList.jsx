@@ -1,6 +1,5 @@
 import React from "react";
 import PostTable from "../PostTable/PostTable";
-import tableSX from "./TableListSX";
 import {
     Table,
     TableBody,
@@ -11,6 +10,17 @@ import {
     Paper,
     Box,
 } from "@mui/material/";
+
+const tableSX = {
+    display: "flex",
+    justifyContent: "center",
+    alignItem: "center",
+
+    container: {
+        width: 950,
+        minWidth: 650,
+    },
+};
 
 const TableList = ({ posts }) => {
     return (

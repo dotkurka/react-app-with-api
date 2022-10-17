@@ -27,7 +27,7 @@ const AddUserForm = () => {
                 validationSchema={validationSchema}
             >
                 {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
-                    <Form onSubmit={handleSubmit}>
+                    <Form className="user-form-contain" onSubmit={handleSubmit}>
                         <TextField
                             size="small"
                             id="outlined-basic"

@@ -1,7 +1,14 @@
 .user-form {
     display: flex;
-
-    flex-direction: row;
     justify-content: space-around;
     margin: 20px;
+
+    &-contain {
+        width: 900px;
+        display: flex;
+        justify-content: space-between;
+        input {
+            width: 200px;
+        }
+    }
 }

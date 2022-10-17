@@ -5,7 +5,6 @@ import postUser from "../../api/postUsers";
 
 function* getUsers() {
     const users = yield call(() => requesUser());
-    console.log(users);
 
     yield put(addUser(users));
 }

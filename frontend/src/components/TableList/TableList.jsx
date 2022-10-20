@@ -1,5 +1,6 @@
 import React from "react";
-import PostTable from "../PostTable/PostTable";
+import { PostTable } from "./../../components";
+
 import {
     Table,
     TableBody,

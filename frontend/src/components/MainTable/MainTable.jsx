@@ -2,9 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../../features/store/userSlice";
-import AddUserForm from "../AddUserForm/AddUserForm";
-import TableList from "../TableList/TableList";
 import "./MainTable.scss";
+import { AddUserForm, TableList } from "./../../components";
 
 const MainTable = () => {
     const posts = useSelector((state) => state.users.users);

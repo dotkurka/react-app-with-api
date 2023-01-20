@@ -1,8 +1,8 @@
 import React from "react";
-import MainTable from "./components/MainTable/MainTable";
+import Learn from "./learn/Learn";
 
 function App() {
-    return <MainTable />;
+    return <Learn />;
 }
 
 export default App;
